@@ -1,16 +1,29 @@
 package com.jarvis.app
 
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import okhttp3.*
+import java.io.IOException
 
 class AiClient {
 	    private val client = OkHttpClient()
 
-	        // This function will eventually send screen data to the AI
-	            fun askAi(query: String) {
-	            	        // We will add the API URL and processing logic here soon
-	            	            }
-	            	            }
-	            	            
-	            }
+	        fun askAi(query: String) {
+	        	        val request = Request.Builder()
+	        	                    .url("YOUR_API_URL") // Replace with your AI server endpoint
+	        	                                .build()
+
+	        	                                        client.newCall(request).enqueue(object : Callback {
+	        	                                        	            override fun onFailure(call: Call, e: IOException) {
+	        	                                        	            	                e.printStackTrace()
+	        	                                        	            	                            }
+	        	                                        	            	                                        override fun onResponse(call: Call, response: Response) {
+	        	                                        	            	                                        	                // Handle the AI response here
+	        	                                        	            	                                        	                            }
+	        	                                        	            	                                        	                                    })
+	        	                                        	            	                                        	                                        }
+	        	                                        	            	                                        	                                        }
+	        	                                        	            	                                        	                                        
+	        	                                        	            	                                        }
+	        	                                        	            }
+	        	                                        })
+	        }
 }
